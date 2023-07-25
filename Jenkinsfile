@@ -73,7 +73,7 @@ environment{
                      git commit -m "Updated the deployment.yml"
                     """
                     withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
-                        git push "https://github.com/inodinwetrust10/gitops.git" main
+                      sh "git push https://github.com/inodinwetrust10/gitops.git main"
 }
                 }
             }
