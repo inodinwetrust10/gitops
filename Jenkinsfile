@@ -63,5 +63,20 @@ environment{
                 }
             }
         }
+        stage('Push the change deploymentfile to Git'){
+            steps{
+                script{
+                    sh """
+                     git config --global user.name "inodinwetrust"
+                     git config --global user.email "adi4gbsingh@gmail.com"
+                     git add deployment.yml
+                     git commit -m "Updated the deployment.yml"
+                    """
+                    withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
+                        git push "https://github.com/inodinwetrust10/gitops.git" main
+}
+                }
+            }
+        }
     }
 }
