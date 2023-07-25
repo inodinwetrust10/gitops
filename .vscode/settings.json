@@ -1,0 +1,17 @@
+{
+  "jenkins-runner.jobs": {
+    "gitops": {
+      "isDefault": true,
+      "runWith": "jenkins-master",
+      "name": "gitops"
+    }
+  },
+  "jenkins-runner.hostConfigs": {
+    "jenkins-master": {
+      "url": "http://54.226.237.138:8080/",
+      "user": "admin",
+      "password": "fbe53b8231124c08b4e0af0fbbdfd2af",
+      "useCrumbIssuer": true
+    }
+  }
+}
